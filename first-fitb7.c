@@ -35,7 +35,7 @@ int main()
         for(j = 1; j <= jmlBlok; j++)
         {
             //melakukan proses alokasi dengan mengurangi ukuran blok dengan ukuran proses
-            if (alokasiBlok[i] != 1)
+            if (alokasiBlok[j] != 1)
             {
                 temp = ukuranBlok[j] - ukuranProses[i];
                 if (temp >= 0)

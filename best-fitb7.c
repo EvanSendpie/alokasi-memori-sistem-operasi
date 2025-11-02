@@ -13,7 +13,7 @@ void main() {
     printf("\nMasukkan jumlah blok memori: ");
     scanf("%d", &jmlBlok);
     printf("Masukkan jumlah proses: ");
-    scanf("%d", jmlProses);
+    scanf("%d", &jmlProses);
 
     printf("\nMasukkan ukuran blok memori:\n");
     for(i = 1; i <= jmlBlok; i++){
@@ -23,28 +23,28 @@ void main() {
 
     printf("Masukkan ukuran proses:\n");
     for (i = 1; i <= jmlProses; i++){
-        printf("Proses %d", i);
+        printf("Proses %d: ", i);
         scanf("%d", &ukuranProses[i]);
     }
 
     for (i = 1; i <= jmlProses; i++){
         for(j = 1; j <= jmlBlok; j++){
             //melakukan proses alokasi dengan mengurangi ukuran blok dengan ukuran proses
-            if(alokasiBlok[i] != 1){
-                temp = ukuranBlok[j] - ukuranBlok[i];
-                if(temp == 0){
+            if(alokasiBlok[j] != 1){
+                temp = ukuranBlok[j] - ukuranProses[i];
+                if(temp >= 0)
                     if(lowest > temp){
                         flags[i] = j;
                         lowest = temp;
                     }
-                }
             }
         }
         //alokasi best fit berdasarkan nilai fragment terkecil
         frag[i] = lowest;
         alokasiBlok[flags[i]] = 1;
-        lowest = 100000;
+        lowest = 10000;
     }
+    
     //tampilan output
     printf("\nNo. Proses:\tUkuran Proses:\tAlokasi Blok:\tFragment");
     for (i = 1; i <= jmlProses; i++)
