@@ -18,7 +18,7 @@ void main(){
     printf("\nMasukkan ukuran blok memori:\n");
     for (i = 1; i <= jmlBlok; i++){
         printf("Blok %d: ", i);
-        scanf("%d", &ukuranBlok);
+        scanf("%d", &ukuranBlok[i]);
     }
 
     printf("Masukkan ukuran proses:\n");

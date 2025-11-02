@@ -26,7 +26,7 @@ int main()
     for (i = 1; i <= jmlProses; i++)
     {
         printf("Proses %d: ", i);
-        scanf("&d", &ukuranProses);
+        scanf("&d", &ukuranProses[i]);
     }
 
     //mengambil setiap proses satu persatu
